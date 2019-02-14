@@ -1,117 +1,412 @@
+html {
+    height: 100%;
+}
+
 body {
+    min-height: 100%;
     margin: 0;
     font-family: 'Helvetica';
+    font-size: 16px;
 }
 
-.tabs {
-    width: 100%;
-    height: 50px;
+header {
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
+    justify-content: space-between;
     align-items: center;
-    background: darkslateblue;
-    z-index: 1;
-}
-
-.tab {
-    width: 25%;
-    height: 100%;
-    padding: 15px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    text-transform: uppercase;
-    border-bottom: 5px solid transparent;
-    box-sizing: border-box;
-}
-
-.tab:hover {
-    color: white;
-    border-bottom: 5px solid white;
-}
-
-.tab.selected {
-    color: yellow;
-    border-bottom: 5px solid yellow;
-}
-
-.content {
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.news-item {
-    width: 100%;
-    height: calc((100% - 50px)/3);
-    padding: 10px;
-    color: white;
-    overflow: hidden;
-    text-shadow: 0 0 10px #000;
-    background-position: 50% 50%;
-    background-size: cover;
-    box-sizing: border-box;
-    box-shadow: 0 0 7px yellow;
     position: relative;
 }
 
-.news-source {
-    padding-top: 10%;
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.news-date,
-.news-source {
-    font-size: 10px;
-    color: yellow;
-}
-
-.news-author,
-.news-source {
-    margin: 0;
-}
-
-.news-author {
-    float: left;
-}
-
-a {
+.logo h1 {
+    font-weight: bold;
     color: white;
-    text-decoration: none;
 }
 
-h2 {
-    font-size: 18px;
+.default-actions button {
+    background: white;
+    color: royalblue;
 }
 
-.preloader {
-    width: 100%;
-    height: 100%;
+.main {
+    min-height: calc(100vh - 150px);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-    color: yellow;
-    background: darkslateblue;
-    position: fixed;
-    top: 0;
-    left: 0;
+    padding: 50px;
+}
+
+.greeting-page,
+.manage-categories,
+.manage-users,
+.user-account-page,
+.place-ad-page,
+.user-account-ads {
+    flex-direction: column;
+}
+
+.greeting-page h1,
+.greeting-page p,
+.manage-categories,
+.manage-users,
+.user-account-page h1,
+.place-ad-page h1,
+.user-account-ads h1 {
+    color: royalblue;
+}
+
+.login-page form {
     text-align: center;
 }
 
-.msg {
-    text-shadow: 0 0 7px yellow;
+.login-input {
+    margin: 20px 0;
 }
 
-.loader {
-    -webkit-animation: rotating 1.5s linear infinite;
+.login-input label {
+    color: royalblue;
 }
 
-@-webkit-keyframes rotating {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-    }
+.login-input input {
+    font-size: 14px;
+    border: 1px solid royalblue;
+}
+
+.login-page button,
+#place-ad-form button {
+    font-size: 14px;
+    font-weight: bold;
+    background: white;
+    color: royalblue;
+    transition: .23s ease-in;
+    border-radius: 5px;
+    border: 1px solid royalblue;
+    padding: 5px 10px;
+}
+
+.login-page button:hover,
+#place-ad-form button:hover {
+    background: royalblue;
+    color: white;
+}
+
+.listing,
+.login-page {
+    flex-direction: column;
+}
+
+.listing h1,
+.login-page h1 {
+    color: royalblue;
+}
+
+.ads {
+    width: 50%;
+}
+
+.ad {
+    width: 100%;
+    margin: 50px auto;
+    border-radius: 5px;
+    padding: 10px;
+    background: royalblue;
+    color: white;
+    position: relative;
+    box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.ad-info-date,
+.ad-info-user,
+.ad-content-title,
+.ad-content-description,
+.ad-content-description div {
+    margin-bottom: 10px;
+}
+
+.ad-info-date {
+    font-weight: bold;
+    color: lightseagreen;
+    border-bottom: 1px solid white;
+}
+
+.ad-content-category {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.ad-content-description {
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.ad-content-description div {
+    text-decoration: underline;
+}
+
+.ad-info-action {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.ad-content-price {
+    font-weight: bold;
+    color: lightseagreen;
+    text-align: right;
+}
+
+#place-ad-form {
+    width: 50%;
+    text-transform: capitalize;
+    background: royalblue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+
+}
+
+#place-ad-form select,
+#place-ad-form input,
+#place-ad-form textarea {
+    background: royalblue;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#place-ad-form select::placeholder,
+#place-ad-form input::placeholder,
+#place-ad-form textarea::placeholder {
+    color: white;
+}
+
+#place-ad-form input {
+    width: 23%;
+}
+
+#place-ad-form textarea {
+    width: 98%;
+    min-height: 100px;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.place-ad-description {
+    margin-bottom: 10px;
+}
+
+#place-ad-form button {
+    width: 50%;
+    display: block;
+    text-transform: uppercase;
+    margin: 10px auto 0;
+}
+
+#place-ad-form button:hover {
+    border: 1px solid white;
+}
+
+.user-account,
+.user-account button {
+    color: royalblue;
+}
+
+.user-account {
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid royalblue;
+    padding: 10px;
+}
+
+.user-account-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-avatar-column,
+.user-info-column {
+    width: 50%;
+}
+
+.user-avatar-column input {
+    padding: 5px 0;
+    margin: 0;
+}
+
+.user-info-column div {
+    padding-bottom: 10px;
+    border-bottom: 1px solid royalblue;
+    margin-bottom: 10px;
+}
+
+.user-info-column div:last-of-type {
+    border: 0;
+}
+
+.user-info-column div a {
+    float: right;
+}
+
+.user-account-info img {
+    border: 1px solid royalblue;
+    border-radius: 5px;
+}
+
+.user-account-controls {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid royalblue;
+    padding: 10px;
+}
+
+.user-account-controls a,
+.user-account-controls button {
+    background: white;
+    color: royalblue;
+    border: 1px solid royalblue;
+}
+
+.user-account-controls a:hover,
+.user-account-controls button:hover {
+    background: royalblue;
+    color: white;
+}
+
+.categories-panel,
+.users-panel {
+    width: 40%;
+}
+
+.manage-categories ul,
+.users-panel ul {
+    padding: 0;
+}
+
+.manage-categories li,
+.users-panel li {
+    list-style-type: none;
+    border-bottom: 1px solid royalblue;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.category-edit-controls,
+.users-edit-controls {
+    float: right;
+}
+
+.add-category {
+    border-radius: 5px;
+    border: 1px solid royalblue;
+    padding: 10px;
+}
+
+.add-category input {
+    width: 80%;
+    border: 1px solid royalblue;
+}
+
+.add-category .admin-controls {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.add-category .admin-controls button {
+    background: white;
+    color: royalblue;
+    border: 1px solid royalblue;
+}
+
+.add-category .admin-controls button:hover {
+    background: royalblue;
+    color: white;
+}
+
+.not-found h1,
+.access-denied h1,
+.access-denied p {
+    color: royalblue;
+}
+
+.access-denied {
+    flex-direction: column;
+}
+
+.access-denied a {
+    font-weight: bold;
+    color: royalblue;
+    text-decoration: none;
+}
+
+.access-denied u {
+    font-weight: bold;
+    text-decoration-color: royalblue;
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: royalblue;
+    color: white;
+    text-align: center;
+}
+
+footer h4 {
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+button {
+    font-weight: bold;
+}
+
+button,
+input {
+    cursor: pointer;
+}
+
+input,
+button {
+    padding: 3px;
+    border: 0;
+    border-radius: 3px;
+    margin: 0 5px;
+    outline: none;
+}
+
+input {
+    min-width: 200px;
+    color: royalblue;
+}
+
+a {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.success {
+    color: lightseagreen;
+}
+
+::placeholder {
+    color: royalblue;
 }

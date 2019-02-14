@@ -1,0 +1,17 @@
+export const ADD_USER: string = "ADD_USER";
+export const ADD_AD: string = "ADD_AD";
+export const CLEAR_STORE: string = "CLEAR_STORE";
+export const PLACING_AD: string = "PLACING_AD";
+export const DELETE_USER: string = "DELETE_USER";
+export const DELETE_AD: string = "DELETE_AD";
+export const DELETE_USER_AD: string = "DELETE_USER_AD";
+export const FIND_ADS: string = "FIND_ADS";
+export const GET_FAKE_DATA: string = "GET_FAKE_DATA";
+export const GET_USERS: string = "GET_USERS";
+export const GET_USER: string = "GET_USER";
+export const GET_ADS: string = "GET_ADS";
+export const GET_AD: string = "GET_AD";
+export const GET_USER_ADS: string = "GET_USER_ADS";
+export const GET_CATEGORIES: string = "GET_CATEGORIES";
+export const SIGNIN: string = "SIGNIN";
+export const LOGOUT: string = "LOGOUT";
